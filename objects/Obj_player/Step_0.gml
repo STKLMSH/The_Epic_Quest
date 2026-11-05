@@ -29,9 +29,9 @@ if (x < 12) { x = 12; hspd = max(hspd, 0); }
 if (x > room_width - 12) { x = room_width - 12; hspd = min(hspd, 0); }
 if (vspd < 0 && place_meeting(x, y - 1, global.tilemap)) vspd = 0;
 if (hspd != 0 && place_meeting(x + sign(hspd), y, global.tilemap)) hspd = 0;
-if (place_meeting(x, y, global.tilemap_)) {
+if (place_meeting(x, y, global.tilemap)) {
 	var _n = 0;
-	while (place_meeting(x, y, global.tilemap_) && _n < 16) {
+	while (place_meeting(x, y, global.tilemap) && _n < 16) {
 	y -= 1;
 	_n++;
 	}

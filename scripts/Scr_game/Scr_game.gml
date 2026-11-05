@@ -11,12 +11,12 @@ function game_init() {
 	global.shake = 0;
 	global.debug = false;
 	global.ui_a = 1;
-	global.inv = inv_create();
-	global.fx = [];
+ // global.inv = inv_create();
+ // global.fx = [];
 	
-	fonts_init();
-	rarity_db_init();
-	item_db_init();	
+ // fonts_init();
+ //	rarity_db_init();
+ //	item_db_init();	
 }
 
 function game_new_run() {
@@ -25,8 +25,8 @@ function game_new_run() {
 	global.paused = false;
 	global.hitstop = 0;
 	global.shake = 0;
-	global.inv = inv_create();
-	global.fx = [];
+ // global.inv = inv_create();
+ // global.fx = [];
 }
 
 function approach(_a, _b, _step) {
