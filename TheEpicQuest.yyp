@@ -32,6 +32,7 @@
   },
   "name":"TheEpicQuest",
   "resources":[
+    {"id":{"name":"Obj_level_controller","path":"objects/Obj_level_controller/Obj_level_controller.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Scr_game","path":"scripts/Scr_game/Scr_game.yy",},},
     {"id":{"name":"Src_config","path":"scripts/Src_config/Src_config.yy",},},
