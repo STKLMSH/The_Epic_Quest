@@ -62,7 +62,7 @@
     },
     "name":"Spr_player_jump",
     "playback":1,
-    "playbackSpeed":8.0,
+    "playbackSpeed":14.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
