@@ -16,4 +16,18 @@ jump_cut = 0;
 
 facing = 1;
 
+anim_key = "idle";
+sx = 1;
+sy = 1;
+was_on_ground = false;
+fall_speed = 0;
+
+set_anim = function(_spr, _key) {
+	if (sprite_index != _spr) {
+		sprite_index = _spr;
+		image_index = 0;
+	}
+	anim_key = _spr == Spr_player_atk ? "atk" : _key;
+}
+
 

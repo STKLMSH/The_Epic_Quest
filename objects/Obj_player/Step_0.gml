@@ -12,7 +12,20 @@ var _run = keyboard_check(vk_shift);
 
 if (jump_buffer > 0) jump_buffer--;
 
+sx = lerp(sx, 1 , 0.18);
+sy = lerp(sy, 1 , 0.18);
+
 var _on_ground = place_meeting(x, y + 1, global.tilemap);
+
+
+// Приземление
+if(_on_ground && !was_on_ground) {
+	if(fall_speed > 2.5) {
+		sx = 1 + min(fall_speed * 0.035, 0.32);
+		sy = 1 - min(fall_speed * 0.035, 0.32);
+	}
+	jump_cut = false;
+}
 
 
 // Горизонтальное движение
@@ -34,6 +47,8 @@ if (_on_ground) {
 
 if (_jump_down) jump_buffer = 6;
 if (jump_buffer > 0 && coyote > 0) {
+	sx = 0.78;
+	sy = 1.25;
 	vspd = -jump_height;
 	jump_buffer = 0;
 	coyote = 0;
@@ -44,6 +59,30 @@ if (!_jump_held && vspd < -2 && !jump_cut) {
 	vspd *= 0.5;
 	jump_cut = true;
 }
+
+
+// Анимация
+if(!_on_ground) {
+	if(vspd < 0) set_anim(Spr_player_jump, "jump");
+	else set_anim(Spr_player_fall, "fall");
+	if (image_index >= image_number - 1) {
+		image_index = image_number - 1;
+		image_speed = 0;
+	}
+} else if (abs(hspd) > 0.3) {
+	if (_run && abs(hspd) > move_speed * 1.1) {
+		set_anim(Spr_player_run, "run");
+		image_speed = clamp(abs(hspd) / (move_speed * run_mult), 0.6, 1.2);
+	} else {
+		set_anim(Spr_player_walk, "walk");
+		image_speed = clamp(abs(hspd) / move_speed, 0.6, 1.1);
+	}
+} else {
+	set_anim(Spr_player_idle, "idle");
+}
+
+fall_speed = vspd;
+was_on_ground = _on_ground;
 
 
 // Движение и столкновение
