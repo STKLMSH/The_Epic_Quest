@@ -1,0 +1,6 @@
+age = 0;
+magnet = false;
+mag_speed = 2;
+
+image_speed = 1;
+image_index = irandom(image_number - 1);

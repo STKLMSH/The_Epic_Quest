@@ -30,4 +30,4 @@ set_anim = function(_spr, _key) {
 	anim_key = _spr == Spr_player_atk ? "atk" : _key;
 }
 
-
+is_dead = false;

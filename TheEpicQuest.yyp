@@ -32,6 +32,7 @@
   },
   "name":"TheEpicQuest",
   "resources":[
+    {"id":{"name":"Obj_coin","path":"objects/Obj_coin/Obj_coin.yy",},},
     {"id":{"name":"Obj_level_controller","path":"objects/Obj_level_controller/Obj_level_controller.yy",},},
     {"id":{"name":"Obj_player","path":"objects/Obj_player/Obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},

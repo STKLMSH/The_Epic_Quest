@@ -101,3 +101,7 @@ if (place_meeting(x, y, global.tilemap)) {
 	_n++;
 	}
 }
+
+
+// тестовая штучка
+if (keyboard_check_pressed(ord("G"))) coin_spawn(x, y - 75, 10);

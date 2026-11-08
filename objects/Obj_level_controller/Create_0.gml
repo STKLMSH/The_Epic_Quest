@@ -18,3 +18,5 @@ if (instance_exists(Obj_player)) {
 }
 
 camera_set_view_pos(view_camera[0], floor(cam_x), floor(cam_y));
+
+coin_pop = 0;

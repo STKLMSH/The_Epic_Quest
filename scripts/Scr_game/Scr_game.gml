@@ -46,3 +46,14 @@ function sign_or(_v, _def) {
 	if (_v != 0) return sign(_v);
 	return sign(_def);
 }
+
+function coin_spawn(_x, _y, _n) {
+	repeat (_n) {
+		instance_create_layer(_x + random_range(-5, 5), _y - random_range(0, 8), LAYER_INST,
+		Obj_coin, {
+			hspd : random_range(-2.4, 2.4),
+			vspd : random_range(-5.8, -3.6),
+			value : 1
+		});
+	}
+}
